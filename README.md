@@ -1,11 +1,5 @@
 ### Windows
 
-#### Install Software
-
-* Firefox
-
-* MSYS2
-
 #### Procedure
 
 1. Download scenv by powershell
