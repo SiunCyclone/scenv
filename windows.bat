@@ -4,17 +4,20 @@ echo.
 echo *** Registry Backup ***
 echo.
 
-echo * Explorer.reg
-reg export "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" backup/Explorer.reg /y
+echo * Explorer.hiv
+reg save "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" %~dp0/backup/Explorer.hiv /y
 
-echo * MediaPlayer.reg
-reg export "HKCU\Software\Microsoft\MediaPlayer\Preferences" backup/MediaPlayer.reg /y
+echo * MediaPlayer.hiv
+reg save "HKCU\Software\Microsoft\MediaPlayer\Preferences" %~dp0/backup/MediaPlayer.hiv /y
 
-echo * Keyboard.reg
-reg export "HKCU\Control Panel\Keyboard" backup/Keyboard.reg /y
+echo * Keyboard.hiv
+reg save "HKCU\Control Panel\Keyboard" %~dp0/backup/Keyboard.hiv /y
 
-echo * Mouse.reg
-reg export "HKCU\Control Panel\Mouse" backup/Mouse.reg /y
+echo * Mouse.hiv
+reg save "HKCU\Control Panel\Mouse" %~dp0/backup/Mouse.hiv /y
+
+echo * KeyboardLayout.hiv
+reg save "HKLM\SYSTEM\CurrentControlSet\Control\Keyboard Layout" %~dp0/backup/KeyboardLayout.hiv /y
 
 echo.
 echo *** Registry Customize ***
@@ -47,7 +50,62 @@ reg add "HKCU\Control Panel\Keyboard" /v "KeyboardSpeed" /t REG_SZ /d "31" /f
 echo * Mouse speed up
 reg add "HKCU\Control Panel\Mouse" /v "MouseSpeed" /t REG_SZ /d "12" /f
 
-powershell -NoProfile -ExecutionPolicy Unrestricted ./windows.ps1
+echo.
+pause
+
+:select
+cls
+echo *** Keyboard Layout Customize ***
+echo.
+echo ====== Select your keyboard ======
+echo  A: Windows Keyboard
+echo     * Replace CapsLock to Esc
+echo  B: Mac Keyboard
+echo     * Replace Control to Esc
+echo     * Replace CapsLock to Control
+echo ==================================
+set KEYBOARD_LAYOUT=
+set /p KEYBOARD_LAYOUT="Press 'A' or 'B': "
+if not "%KEYBOARD_LAYOUT%"=="" set KEYBOARD_LAYOUT=%KEYBOARD_LAYOUT:~0,1%
+if "%KEYBOARD_LAYOUT%"=="A" goto confirm
+if "%KEYBOARD_LAYOUT%"=="a" goto confirm
+if "%KEYBOARD_LAYOUT%"=="B" goto confirm
+if "%KEYBOARD_LAYOUT%"=="b" goto confirm
+goto select
+
+:confirm
+echo.
+echo Your keyboard is really type '%KEYBOARD_LAYOUT%'?
+set CONFIRM=
+set /p CONFIRM="Press 'Y' or 'N': "
+if not "%CONFIRM%"=="" set CONFIRM=%CONFIRM:~0,1%
+if "%CONFIRM%"=="Y" goto replace
+if "%CONFIRM%"=="y" goto replace
+if "%CONFIRM%"=="N" goto select
+if "%CONFIRM%"=="n" goto select
+goto confirm
+
+:replace
+if "%KEYBOARD_LAYOUT%"=="A" goto replace_impl_a
+if "%KEYBOARD_LAYOUT%"=="a" goto replace_impl_a
+if "%KEYBOARD_LAYOUT%"=="B" goto replace_impl_b
+if "%KEYBOARD_LAYOUT%"=="b" goto replace_impl_b
+
+:replace_impl_a
+echo.
+echo * Replace CapsLock to Esc
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Keyboard Layout" /v "Scancode Map" /t REG_BINARY /d "00000000000000000200000001003A0000000000" /f
+goto ps
+
+:replace_impl_b
+echo.
+echo * Replace Control to Esc
+echo * Replace CapsLock to Control
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Keyboard Layout" /v "Scancode Map" /t REG_BINARY /d "0000000000000000030000001D003A0001001D0000000000" /f
+goto ps
+
+:ps
+powershell -NoProfile -ExecutionPolicy Unrestricted "%~dp0/windows.ps1"
 
 pause
 exit
