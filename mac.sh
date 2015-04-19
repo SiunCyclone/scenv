@@ -9,8 +9,13 @@ function install_brew_pkg() {
 }
 
 function main() {
-  install_brew_pkg
-  ./all.sh
+  case "${OSTYPE}" in
+    darwin*)
+      install_brew_pkg
+      ./all.sh
+      ;;
+    *) echo "mac.sh is only for mac system";;
+  esac
 }
 
 main

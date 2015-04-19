@@ -7,8 +7,13 @@ function install_pacman_pkg() {
 }
 
 function main() {
-  install_pacman_pkg
-  ./all.sh
+  case "${OSTYPE}" in
+    linux*)
+      install_pacman_pkg
+      ./all.sh
+      ;;
+    *) echo "linux.sh is only for linux system";;
+  esac
 }
 
 main
