@@ -1,6 +1,6 @@
 @echo off
 
-powershell -NoProfile -ExecutionPolicy Unrestricted ./setup.ps1
+powershell -NoProfile -ExecutionPolicy Unrestricted ./windows.ps1
 
 pause
 exit
