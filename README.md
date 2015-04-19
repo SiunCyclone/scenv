@@ -14,7 +14,7 @@
 PS> (New-Object System.Net.WebClient.DownloadFile("https://github.com/SiunCyclone/dotfiles/archive/master.zip", "scenv.zip")
   ```
 
-2. Unzip scenv.zip and execute windows.bat
+2. Unzip scenv.zip and execute **windows.bat**
 
 3. Open a MSYS2-shell and execute below command
 
@@ -22,5 +22,5 @@ PS> (New-Object System.Net.WebClient.DownloadFile("https://github.com/SiunCyclon
 $ pacman --needed -Sy bash pacman pacman-mirrors msys2-runtime
   ```
 
-4. Reopen a MSYS2-shell by administrator and execute windows.sh
+4. Reopen a MSYS2-shell by administrator and execute **windows.sh**
 
