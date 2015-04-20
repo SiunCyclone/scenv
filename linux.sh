@@ -10,7 +10,10 @@ function main() {
   case "${OSTYPE}" in
     linux*)
       install_pacman_pkg
-      ./all.sh
+
+      . ./import.sh
+      install_zsh_plugins
+      locate_dotfiles
       ;;
     *) echo "linux.sh is only for linux system";;
   esac

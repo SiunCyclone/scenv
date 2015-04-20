@@ -32,7 +32,10 @@ function main() {
     msys*)
       install_pacman_pkg
       modify_msys_batfile
-      ./all.sh
+
+      . ./import.sh
+      install_zsh_plugins
+      locate_dotfiles
       ;;
     *) echo "windows.sh is only for windows system";;
   esac
