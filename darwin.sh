@@ -14,7 +14,7 @@ function main() {
       install_brew_pkg
       ./all.sh
       ;;
-    *) echo "mac.sh is only for mac system";;
+    *) echo "darwin.sh is only for darwin system";;
   esac
 }
 
