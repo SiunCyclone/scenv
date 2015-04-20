@@ -6,18 +6,23 @@ echo.
 
 echo * Explorer.hiv
 reg save "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" %~dp0/backup/Explorer.hiv /y
+call :error_check
 
 echo * MediaPlayer.hiv
 reg save "HKCU\Software\Microsoft\MediaPlayer\Preferences" %~dp0/backup/MediaPlayer.hiv /y
+call :error_check
 
 echo * Keyboard.hiv
 reg save "HKCU\Control Panel\Keyboard" %~dp0/backup/Keyboard.hiv /y
+call :error_check
 
 echo * Mouse.hiv
 reg save "HKCU\Control Panel\Mouse" %~dp0/backup/Mouse.hiv /y
+call :error_check
 
 echo * KeyboardLayout.hiv
 reg save "HKLM\SYSTEM\CurrentControlSet\Control\Keyboard Layout" %~dp0/backup/KeyboardLayout.hiv /y
+call :error_check
 
 echo.
 echo *** Registry Customize ***
@@ -109,4 +114,15 @@ powershell -NoProfile -ExecutionPolicy Unrestricted "%~dp0/windows.ps1"
 
 pause
 exit
+
+:error_check
+echo %errorlevel%
+if not %errorlevel%=="0" (
+  echo Failed to save registry file
+  echo Are you administrator?
+  echo Aborting...
+  pause
+  exit
+)
+exit /b
 
