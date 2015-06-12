@@ -5,7 +5,7 @@
 1. Download scenv by powershell
 
   ```
-PS> (New-Object System.Net.WebClient).DownloadFile("https://github.com/SiunCyclone/dotfiles/archive/master.zip", "scenv.zip")
+PS> (New-Object System.Net.WebClient).DownloadFile("https://github.com/SiunCyclone/scenv/archive/master.zip", "scenv.zip")
   ```
 
 2. Unzip scenv.zip and execute **windows.bat** by administrator
