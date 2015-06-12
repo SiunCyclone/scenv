@@ -116,8 +116,7 @@ pause
 exit
 
 :error_check
-echo %errorlevel%
-if not %errorlevel%=="0" (
+if not %errorlevel%==0 (
   echo Failed to save registry file
   echo Are you administrator?
   echo Aborting...
