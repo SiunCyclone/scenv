@@ -8,6 +8,8 @@ function install_zsh_plugins() {
 }
 
 function locate_dotfiles() {
+  echo "*** Locating dotfiles ***"
+  echo
   git clone https://github.com/SiunCyclone/dotfiles.git $HOME/dotfiles
   cd $HOME/dotfiles
   git submodule update --init
