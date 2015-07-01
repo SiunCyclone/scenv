@@ -19,6 +19,24 @@ if ((Test-Path 'C:\msys64') -Or (Test-Path 'C:\msys32')) {
   } else {
     (New-Object System.Net.WebClient).DownloadFile("http://downloads.sourceforge.net/project/msys2/Base/i686/msys2-i686-20150202.exe?r=&ts=1427333443&use_mirror=jaist", "$HOME/msys2_installer.exe")
   }
-  Start-Process $HOME/msys2_installer.exe -Wait
+  Start-Process $HOME/msys2_installer.exe
+}
+
+# Virtualbox
+if ((Test-Path 'C:\Program Files (x86)\Oracle\VirtualBox') -Or (Test-Path 'C:\Program Files\Oracle\VirtualBox')) {
+  echo "virtualbox is already installed"
+} else {
+  echo "*** Downloading virtualbox ***"
+  (New-Object System.Net.WebClient).DownloadFile("http://download.virtualbox.org/virtualbox/4.3.28/VirtualBox-4.3.28-100309-Win.exe", "$HOME/virtualbox_installer.exe")
+  Start-Process $HOME/virtualbox_installer.exe
+}
+
+# Vagrant
+if (Test-Path 'C:\HashiCorp\Vagrant') {
+  echo "vagrant is already installed"
+} else {
+  echo "*** Downloading vagrant ***"
+  (New-Object System.Net.WebClient).DownloadFile("https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2.msi", "$HOME/vagrant_installer.msi")
+  Start-Process $HOME/vagrant_installer.msi -Wait
 }
 
