@@ -1,6 +1,6 @@
-### Windows
+## Setup Procedure
 
-#### Procedure
+### Windows
 
 1. Download scenv by powershell
 
@@ -20,19 +20,20 @@ $ pacman --needed -Sy bash pacman pacman-mirrors msys2-runtime
 
 
 ### Arch Linux
-1. Install Git
-```
-# pacman -S git
-```
 
-2. Clone scenv repository
-```
+1. Install Git
+  ```
+$ sudo pacman -S git
+  ```
+
+2. Clone the scenv repository
+  ```
 $ git clone https://github.com/SiunCyclone/scenv.git
-```
+  ```
 
 3. Execute **arch.sh**
-```
-# cd scenv
-# ./arch.sh
-```
+  ```
+$ cd scenv
+$ ./arch.sh
+  ```
 
