@@ -31,4 +31,8 @@ $ git clone https://github.com/SiunCyclone/scenv.git
 ```
 
 3. Execute **arch.sh**
+```
+# cd scenv
+# ./arch.sh
+```
 
