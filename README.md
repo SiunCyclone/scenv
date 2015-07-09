@@ -18,3 +18,17 @@ $ pacman --needed -Sy bash pacman pacman-mirrors msys2-runtime
 
 4. Reopen a MSYS2-shell by administrator and execute **windows.sh**
 
+
+### Arch Linux
+1. Install Git
+```
+# pacman -S git
+```
+
+2. Clone scenv repository
+```
+$ git clone https://github.com/SiunCyclone/scenv.git
+```
+
+3. Execute **arch.sh**
+

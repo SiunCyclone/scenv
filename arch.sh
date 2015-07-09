@@ -3,7 +3,7 @@
 function install_pacman_pkg() {
   echo "*** Install Pacman Packages ***"
   echo
-  pacman -Syu
+  pacman -S vim zsh ruby
 }
 
 function main() {
@@ -15,7 +15,7 @@ function main() {
       install_zsh_plugins
       locate_dotfiles
       ;;
-    *) echo "linux.sh is only for linux system";;
+    *) echo "arch.sh is only for Arch Linux system";;
   esac
 }
 
