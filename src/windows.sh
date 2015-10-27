@@ -3,7 +3,7 @@
 function install_pacman_pkg() {
   echo "*** Install Pacman Packages ***"
   echo
-  pacman -Su vim git zsh ruby
+  pacman -Su vim git zsh ruby wget make mingw-w64-i686-clang gdb mingw-w64-i686-SDL2
 }
 
 # Enable symlink
@@ -28,17 +28,8 @@ function modify_msys_batfile() {
 }
 
 function main() {
-  case "${OSTYPE}" in
-    msys*)
-      install_pacman_pkg
-      modify_msys_batfile
-
-      . ./import.sh
-      install_zsh_plugins
-      locate_dotfiles
-      ;;
-    *) echo "windows.sh is only for windows system";;
-  esac
+  install_pacman_pkg
+  modify_msys_batfile
 }
 
 main

@@ -9,16 +9,7 @@ function install_brew_pkg() {
 }
 
 function main() {
-  case "${OSTYPE}" in
-    darwin*)
-      install_brew_pkg
-
-      . ./import.sh
-      install_zsh_plugins
-      locate_dotfiles
-      ;;
-    *) echo "darwin.sh is only for darwin system";;
-  esac
+  install_brew_pkg
 }
 
 main

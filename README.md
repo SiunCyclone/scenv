@@ -13,10 +13,10 @@ PS> (New-Object System.Net.WebClient).DownloadFile("https://github.com/SiunCyclo
 3. Open a MSYS2-shell and execute below command
 
   ```
-$ pacman --needed -Sy bash pacman pacman-mirrors msys2-runtime
+$ update-core
   ```
 
-4. Reopen a MSYS2-shell by administrator and execute **windows.sh**
+4. Reopen a MSYS2-shell by administrator and execute **setup.sh**
 
 
 ### Arch Linux
@@ -31,9 +31,9 @@ $ sudo pacman -S git
 $ git clone https://github.com/SiunCyclone/scenv.git
   ```
 
-3. Execute **arch.sh**
+3. Execute **setup.sh**
   ```
 $ cd scenv
-$ ./arch.sh
+$ ./setup.sh
   ```
 

@@ -110,7 +110,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Keyboard Layout" /v "Scancode Map
 goto ps
 
 :ps
-powershell -NoProfile -ExecutionPolicy Unrestricted "%~dp0/windows.ps1"
+powershell -NoProfile -ExecutionPolicy Unrestricted "%~dp0/src/windows.ps1"
 
 pause
 exit

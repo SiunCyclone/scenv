@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # zsh-autosuggestions
 function install_zsh_plugins() {
   echo "*** Install Zsh Plugins ***"
@@ -15,4 +17,11 @@ function locate_dotfiles() {
   git submodule update --init
   ./locate.sh
 }
+
+function main() {
+  install_zsh_plugins
+  locate_dotfiles
+}
+
+main
 
