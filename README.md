@@ -18,6 +18,8 @@ $ update-core
 
 4. Reopen a MSYS2-shell by administrator and execute **setup.sh**
 
+5. (Only for 32bit) Close all MSYS2-shell processes and execute **C:/msys32/autorebase.bat**
+
 
 ### Arch Linux
 
