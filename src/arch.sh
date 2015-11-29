@@ -3,7 +3,7 @@
 function install_pacman_pkg() {
   echo "*** Install Pacman Packages ***"
   echo
-  pacman -S vim zsh ruby
+  sudo pacman -S vim zsh ruby
 }
 
 function main() {
