@@ -3,7 +3,13 @@
 function install_pacman_pkg() {
   echo "*** Install Pacman Packages ***"
   echo
-  pacman -Su vim git zsh ruby wget make mingw-w64-i686-clang gdb mingw-w64-i686-SDL2
+  ruby -e "
+    pkgs = \"vim git zsh ruby wget make gdb \" +
+    (/i(3|6)86/ =~ \`uname -a\`.to_s ?
+      \"mingw-w64-i686-clang mingw-w64-i686-SDL2\" :
+      \"mingw-w64-x86_64-clang mingw-w64-x86_64-SDL2\")
+    \`pacman -Su #{pkgs}\`
+  "
 }
 
 # Enable symlink
