@@ -25,41 +25,46 @@ $ update-core
 1. Install Homebrew
 
 2. Install Git
+
   ```
 $ brew install git
   ```
 
 3. Clone the scenv repository
+
   ```
 $ git clone https://github.com/SiunCyclone/scenv.git
   ```
 
 4. Execute **setup.sh**
+
   ```
 $ cd scenv
 $ ./setup.sh
   ```
 
-* Open mvim from terminal
-Edit /usr/local/bin/mvim
-  ```
-gui=
-  ```
+##### Manual Settings
+* Open mvim from terminal  
+Edit /usr/local/bin/mvim   
+`gui=`
 
 
 ### Arch Linux
 
 1. Install Git
+
   ```
 $ sudo pacman -S git
   ```
 
 2. Clone the scenv repository
+
   ```
 $ git clone https://github.com/SiunCyclone/scenv.git
   ```
 
 3. Execute **setup.sh**
+
   ```
 $ cd scenv
 $ ./setup.sh
