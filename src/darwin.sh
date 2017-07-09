@@ -4,7 +4,6 @@
 function install_brew_pkg() {
   echo "*** Install Homebrew Packages ***"
   echo
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   brew install coreutils
 }
 

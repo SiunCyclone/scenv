@@ -19,7 +19,7 @@ function locate_dotfiles() {
 }
 
 function main() {
-  install_zsh_plugins
+  #install_zsh_plugins
   locate_dotfiles
 }
 
