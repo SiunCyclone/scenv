@@ -5,7 +5,7 @@
 1. Download scenv by powershell
 
   ```
-PS> (New-Object System.Net.WebClient).DownloadFile("https://github.com/SiunCyclone/scenv/archive/master.zip", "scenv.zip")
+  PS> (New-Object System.Net.WebClient).DownloadFile("https://github.com/SiunCyclone/scenv/archive/master.zip", "scenv.zip")
   ```
 
 2. Unzip scenv.zip and execute **windows.bat** by administrator
@@ -13,7 +13,7 @@ PS> (New-Object System.Net.WebClient).DownloadFile("https://github.com/SiunCyclo
 3. Open a MSYS2-shell and execute below command
 
   ```
-$ update-core
+  $ update-core
   ```
 
 4. Reopen a MSYS2-shell by administrator and execute **setup.sh**
@@ -27,46 +27,48 @@ $ update-core
 2. Install Git
 
   ```
-$ brew install git
+  $ brew install git
   ```
 
 3. Clone the scenv repository
 
   ```
-$ git clone https://github.com/SiunCyclone/scenv.git
+  $ git clone https://github.com/SiunCyclone/scenv.git
   ```
 
 4. Execute **setup.sh**
 
   ```
-$ cd scenv
-$ ./setup.sh
+  $ cd scenv
+  $ ./setup.sh
   ```
 
 ##### Manual Settings
 * Open mvim from terminal  
-Edit /usr/local/bin/mvim   
-`gui=`
-
+   
+  ```
+  # /usr/local/bin/mvim
+  gui=
+  ```
 
 ### Arch Linux
 
 1. Install Git
 
   ```
-$ sudo pacman -S git
+  $ sudo pacman -S git
   ```
 
 2. Clone the scenv repository
 
   ```
-$ git clone https://github.com/SiunCyclone/scenv.git
+  $ git clone https://github.com/SiunCyclone/scenv.git
   ```
 
 3. Execute **setup.sh**
 
   ```
-$ cd scenv
-$ ./setup.sh
+  $ cd scenv
+  $ ./setup.sh
   ```
 
