@@ -6,8 +6,8 @@ function install_pacman_pkg() {
   ruby -e "
     pkgs = \"vim git zsh ruby wget make gdb \" +
     (/i(3|6)86/ =~ \`uname -a\`.to_s ?
-      \"mingw-w64-i686-clang mingw-w64-i686-SDL2\" :
-      \"mingw-w64-x86_64-clang mingw-w64-x86_64-SDL2\")
+      \"mingw-w64-i686-clang mingw-w64-i686-SDL2 mingw-w64-i686-nodejs\" :
+      \"mingw-w64-x86_64-clang mingw-w64-x86_64-SDL2 mingw-w64-x86_64-nodejs\")
     \`pacman -Su #{pkgs}\`
   "
 }
