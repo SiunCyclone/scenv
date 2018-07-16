@@ -8,6 +8,7 @@ function install_pacman_pkg() {
 
 function main() {
   install_pacman_pkg
+  chsh -s /bin/zsh # Set zsh as a login shell
 }
 
 main

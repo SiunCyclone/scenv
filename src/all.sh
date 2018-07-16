@@ -21,7 +21,6 @@ function locate_dotfiles() {
 function main() {
   # install_zsh_plugins
   locate_dotfiles
-  # chsh -s /bin/zsh # Set zsh as a login shell
 }
 
 main
